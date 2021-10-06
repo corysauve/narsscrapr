@@ -1,0 +1,16 @@
+Package: narsscrapr
+Title: Scrape data from the National Aquatic Resource Surveys 
+Version: 0.0.0.9000
+Authors@R: person("Cory", "Sauve", email = "coryjsauve@gmail.com",
+                  role = c("aut", "cre"))
+Description: This package provides access to data collected by the National Aquatic Resource Surveys (NARS). 
+    NARS data includes coastal waters, lakes and reservoirs, rivers and streams, and wetlands. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    rvest,
+    magrittr,
+    janitor
