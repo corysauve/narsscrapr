@@ -7,12 +7,13 @@
 <!-- badges: end -->
 
 The goal of narsscrapr is to provide an interface to data collected by
-the [National Aquatic Resource
-Surveys](https://www.epa.gov/national-aquatic-resource-surveys). Surveys
-conducted by NARS include:
+the [National Aquatic Resource Surveys
+(NARS)](https://www.epa.gov/national-aquatic-resource-surveys).
+
+Surveys conducted by NARS include:
 
 -   [National Coastal Condition Assessment
-    (NCAA)](https://www.epa.gov/national-aquatic-resource-surveys/ncca)
+    (NCCA)](https://www.epa.gov/national-aquatic-resource-surveys/ncca)
 -   [National Lakes Assessment
     (NLA)](https://www.epa.gov/national-aquatic-resource-surveys/nla)
 -   [National Rivers and Streams Assessment
