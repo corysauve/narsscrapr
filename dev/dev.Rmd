@@ -1,0 +1,63 @@
+---
+title: "Untitled"
+author: "Cory Sauve"
+date: "8/19/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(narsscrapr)
+library(tidyverse)
+library(here)
+```
+
+```{r}
+nars_table <- nars_links()
+```
+
+```{r}
+nars_table_clean <- nars_table %>% 
+  mutate(survey_type = case_when(str_detect(survey, "Lakes") == TRUE ~ "National Lakes Assessment (NLA)", 
+                                 str_detect(survey, "Coastal") == TRUE ~ "National Coastal Condition Assessment (NCCA)",
+                                 str_detect(survey, "Wetlands") == TRUE ~ "National Wetland Condition Assessment (NWCA)", 
+                                 str_detect(survey, "Streams") == TRUE ~ "National Rivers and Stream Assessment (NRSA)")) %>%
+  separate(survey, into = c("survey_name", "survey_year"), sep = ' (?=[^ ]+$)') %>% 
+  select(survey_type, survey_year, indicator:metadata_links) %>% 
+  mutate(data = str_remove(data, "NLA"), data = str_remove(data, "WSA"), data = str_remove(data, "NCA"), 
+         data = str_remove(data, "NRSA"), data = str_remove(data, "NCCA"), data = str_remove(data, "NWCA"), 
+         data = str_remove(data, "National Lakes Assessment"), data = str_remove(data, "2007"), data = str_remove(data, "2004"), 
+         data = str_remove(data, "0809"), data = str_remove(data, "2010"), data = str_remove(data, "2011"), 
+         data = str_remove(data, "2012"), data = str_remove(data, "1314"), data = str_remove(data, "2015"), 
+         data = str_remove(data, "2016"), data = str_remove(data, "2017"), data = str_remove(data, "1819"), 
+         data = str_remove(data, "_"), data = str_remove(data, "csv"), data = str_remove(data, "CSV"), 
+         data = str_remove(data, "zip"), data = str_remove(data, "ZIP"), data = str_remove(data, "Data"), 
+         data = str_remove(data, "-"), data = str_remove(data, "xlsx"), data = str_remove(data, "[(]"),
+         data = str_remove(data, "[)]"), data = str_remove(data, "[(]"), data = str_remove(data, "[)]"),
+         data = str_remove(data, "[(]"), data = str_remove(data, "[)]"), data = str_remove(data, "20061022"), 
+         data = str_remove(data, "20091015"), data = str_remove(data, "20091113"), data = str_remove(data, "20091008"),
+         data = str_remove(data, "20091022"), data = str_remove(data, "20091123"), data = str_remove(data, "20091007"),
+         data = str_remove(data, "20091130"), data = str_remove(data, "20091023"), data = str_remove(data, "20091125"),
+         data = str_remove(data, "20091019"), data = str_remove(data, "20091021"), data = str_remove(data, "20091125"),
+         data = str_remove(data, "20091020"), data = str_replace(data, "External :", "External"), data = str_remove(data, "-"),
+         data = str_replace(data, "ChemistryCHLA", "Chemistry Chla"), data = str_remove(data, "AA"), data = str_trim(data, "left"), 
+         data_url = paste("https://epa.gov", data_links, sep = ""), metadata_url = paste("https://epa.gov", metadata_links, sep = ""), 
+         metadata_url = case_when(metadata_url == "https://epa.govNA" ~ "Not available", TRUE ~ metadata_url)) %>% 
+    select(-data_links, -metadata_links, -metadata) 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
