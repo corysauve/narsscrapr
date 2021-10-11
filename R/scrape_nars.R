@@ -30,7 +30,7 @@ scrape_nars <- function(survey, year, parameter, type="data"){
     readr::read_csv(selection[[1, "data_url"]])
   } else if (type == "metadata"){
     read.delim(selection[[1, "metadata_url"]]) %>%
-      select(2:3) %>%
+      dplyr::select(2:3) %>%
       tibble::as_tibble()
   } else {
     "Type not supported. Use either 'data' or 'metadata'."
