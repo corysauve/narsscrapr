@@ -2,4 +2,5 @@
 
 export("%>%")
 export(get_nars_links)
+export(scrape_nars)
 importFrom(magrittr,"%>%")
