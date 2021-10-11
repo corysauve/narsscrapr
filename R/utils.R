@@ -4,7 +4,7 @@
 #' #' Scrape NARS data and metadata links
 #' @export
 
-nars_links <- function(){
+get_nars_links <- function(){
   nars_base_url <- rvest::read_html("https://www.epa.gov/national-aquatic-resource-surveys/data-national-aquatic-resource-surveys/")
 
   nars_content <- nars_base_url %>%
