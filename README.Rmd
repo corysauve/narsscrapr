@@ -35,6 +35,22 @@ You can install the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("corysauve/narsscrapr")
 ```
+## Basic Usage 
+
+You can scrape NARS data by `survey`, survey `year`, and survey `parameter`:
+```{r}
+library(narsscrapr)
+
+scrape_nars(survey = "NLA", year = 2007, parameter = "Profile")
+```
+
+Metadata for each `parameter` is selected with `type = "metadata"`:
+```{r}
+library(narsscrapr)
+
+scrape_nars(survey = "NLA", year = 2007, parameter = "Profile", type = "metadata")
+```
+
 ## Contributing 
 
 I welcome any contributions or suggestions for improving this package! Please open an issue to do so. 
