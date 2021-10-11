@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
 The goal of narsscrapr is to provide an interface to data collected by
