@@ -5,16 +5,7 @@
 \alias{nars_links}
 \title{NARS Data Links}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 268 rows and 6 columns.
-}
-\usage{
-nars_links
-}
-\description{
-A dataset containing data links for NARS data
-}
-\details{
-format A data frame with 268 rows and 6 variables:
+A data frame with 268 rows and 6 variables:
 \describe{
 \item{survey_type}{NARS survey type}
 \item{survey_year}{Survey year}
@@ -23,5 +14,11 @@ format A data frame with 268 rows and 6 variables:
 \item{data_url}{Link to data}
 \item{metadata}{Link to metadata}
 }
+}
+\usage{
+nars_links
+}
+\description{
+A dataset containing data links for NARS data
 }
 \keyword{datasets}

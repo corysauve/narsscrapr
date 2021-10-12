@@ -2,7 +2,7 @@
 #'
 #' A dataset containing data links for NARS data
 #'
-#' format A data frame with 268 rows and 6 variables:
+#' @format A data frame with 268 rows and 6 variables:
 #' \describe{
 #'  \item{survey_type}{NARS survey type}
 #'  \item{survey_year}{Survey year}
